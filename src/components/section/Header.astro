@@ -598,6 +598,45 @@ import Button from "../ui/Button.astro";
     </div>
 </header>
 
+<script>
+    // Header scroll collapse functionality
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
+    const promoBar = header?.querySelector(".lg\\:block.bg-primary");
+    const topRow = header?.querySelector(
+        ".border-b.border-text\\/10.bg-background",
+    );
+
+    window.addEventListener("scroll", () => {
+        const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 100) {
+            // Scrolled down - hide promo bar and top row
+            header?.classList.add("header-compact");
+            promoBar?.classList.add("hidden");
+            topRow?.classList.add("hidden");
+        } else {
+            // At top - show all
+            header?.classList.remove("header-compact");
+            promoBar?.classList.remove("hidden");
+            topRow?.classList.remove("hidden");
+        }
+
+        lastScrollTop = scrollTop;
+    });
+</script>
+
+<style>
+    header {
+        transition: all 0.3s ease;
+    }
+
+    .header-compact {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
 <!-- Mobile Sidebar Overlay -->
 <div id="mobile-sidebar-overlay" class="fixed inset-0 bg-text/50 z-[60] hidden">
 </div>
