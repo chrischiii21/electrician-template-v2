@@ -1,0 +1,32 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: theme('fontFamily.body');
+        font-weight: theme('fontWeight.normal');
+        color: theme('colors.text');
+        background-color: theme('colors.background');
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: theme('fontFamily.heading');
+        font-weight: theme('fontWeight.bold');
+    }
+}

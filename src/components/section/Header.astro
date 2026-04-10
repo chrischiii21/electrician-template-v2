@@ -1,0 +1,512 @@
+---
+// ElectriTrade Header Component
+import Button from "../ui/Button.astro";
+---
+
+<header class="fixed top-0 left-0 right-0 w-full bg-background shadow-md z-50">
+    <!-- Promotional Top Bar -->
+    <div class="w-full h-12 bg-primary text-background">
+        <div
+            class="max-w-[1920px] mx-auto h-full flex items-center justify-between px-12"
+        >
+            <!-- Promotional Message -->
+            <div class="flex items-center gap-3 text-sm">
+                <svg
+                    class="w-5 h-5 text-accent"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-bold">SPRING SPECIAL:</span>
+                <span class="text-background/70"
+                    >20% OFF any electrical panel upgrade — Use code:</span
+                >
+                <span
+                    class="bg-accent text-background px-3 py-1 text-sm font-bold"
+                    >SPRING20</span
+                >
+            </div>
+
+            <!-- Right Side: Email & Social Icons -->
+            <div class="flex items-center gap-8">
+                <a
+                    href="mailto:info@electritrade.com"
+                    class="text-sm text-background/70 hover:text-background transition-colors flex items-center gap-2"
+                >
+                    <span>EMAIL US</span>
+                </a>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3">
+                    <Button
+                        href="#"
+                        variant="primary"
+                        size="sm"
+                        class="!w-8 !h-8 !p-0"
+                        aria-label="Facebook"
+                    >
+                        f
+                    </Button>
+                    <Button
+                        href="#"
+                        variant="primary"
+                        size="sm"
+                        class="!w-8 !h-8 !p-0"
+                        aria-label="Twitter"
+                    >
+                        𝕏
+                    </Button>
+                    <Button
+                        href="#"
+                        variant="primary"
+                        size="sm"
+                        class="!w-8 !h-8 !p-0"
+                        aria-label="Instagram"
+                    >
+                        IG
+                    </Button>
+                </div>
+
+                <!-- Close Button -->
+                <Button
+                    variant="ghost"
+                    size="sm"
+                    class="ml-2 !p-1.5 text-background/50 hover:text-background"
+                    aria-label="Close banner"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </Button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header Container -->
+    <div class="w-full border-b border-text/10">
+        <div class="max-w-[1920px] mx-auto flex items-stretch">
+            <!-- Logo Section -->
+            <div
+                class="w-96 border-r border-text/10 flex items-center px-10 py-7 bg-background"
+            >
+                <div class="flex items-center gap-5 w-full">
+                    <img
+                        src="/logo.png"
+                        alt="ElectriTrade Logo"
+                        class="w-20 h-20 object-contain shrink-0"
+                    />
+                    <div class="flex flex-col gap-1">
+                        <h1
+                            class="text-3xl font-heading font-bold text-accent leading-tight"
+                        >
+                            ElecTrade
+                        </h1>
+                        <p class="text-base font-body text-text/70">
+                            Professional Electrical
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Content -->
+            <div class="flex-1 flex flex-col min-w-0">
+                <!-- Top Row: Specials & Financing -->
+                <div
+                    class="flex items-center justify-between px-16 py-5 border-b border-text/10 bg-background"
+                >
+                    <div class="flex items-center gap-16">
+                        <a
+                            href="/specials"
+                            class="flex items-center gap-4 text-text hover:text-accent transition-colors group"
+                        >
+                            <svg
+                                class="w-7 h-7 text-accent group-hover:text-accent/80 transition-colors"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-body font-bold whitespace-nowrap"
+                                >Specials / Coupons</span
+                            >
+                        </a>
+                        <a
+                            href="/financing"
+                            class="flex items-center gap-4 text-text hover:text-accent transition-colors group"
+                        >
+                            <svg
+                                class="w-7 h-7 text-accent group-hover:text-accent/80 transition-colors"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"
+                                ></path>
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-body font-bold whitespace-nowrap"
+                                >Financing</span
+                            >
+                        </a>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="flex items-center gap-10 text-text">
+                        <a
+                            href="tel:+1234567890"
+                            class="flex items-center gap-3 hover:text-accent transition-colors"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                                ></path>
+                            </svg>
+                            <span class="text-sm font-body font-bold"
+                                >(123) 456-7890</span
+                            >
+                        </a>
+                        <a
+                            href="mailto:info@electritrade.com"
+                            class="flex items-center gap-3 hover:text-accent transition-colors"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                                ></path>
+                                <path
+                                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                                ></path>
+                            </svg>
+                            <span class="text-sm font-body font-bold"
+                                >info@electritrade.com</span
+                            >
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Main Navigation -->
+                <div class="flex items-stretch justify-between bg-background">
+                    <nav class="flex items-center gap-14 px-16 py-6">
+                        <a
+                            href="/"
+                            class="text-base font-body text-text hover:text-accent transition-colors whitespace-nowrap"
+                        >
+                            Home
+                        </a>
+                        <div class="relative group">
+                            <button
+                                class="text-base font-body text-text hover:text-accent transition-colors whitespace-nowrap flex items-center gap-2"
+                            >
+                                About Us
+                                <svg
+                                    class="w-4 h-4 transition-transform group-hover:rotate-180"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                            >
+                                <div
+                                    class="bg-background border border-accent/20 shadow-lg py-2 min-w-[200px]"
+                                >
+                                    <a
+                                        href="/careers"
+                                        class="block px-6 py-3 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors whitespace-nowrap"
+                                    >
+                                        Careers
+                                    </a>
+                                    <a
+                                        href="/reviews"
+                                        class="block px-6 py-3 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors whitespace-nowrap"
+                                    >
+                                        Reviews/Testimonials
+                                    </a>
+                                    <a
+                                        href="/team"
+                                        class="block px-6 py-3 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors whitespace-nowrap"
+                                    >
+                                        Meet The Team
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <button
+                                class="text-base font-body text-text hover:text-accent transition-colors whitespace-nowrap flex items-center gap-2"
+                            >
+                                Services
+                                <svg
+                                    class="w-4 h-4 transition-transform group-hover:rotate-180"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                            >
+                                <div
+                                    class="bg-background border border-accent/20 shadow-lg overflow-hidden min-w-[900px]"
+                                >
+                                    <!-- Header Row -->
+                                    <div class="grid grid-cols-4">
+                                        <div
+                                            class="bg-accent text-background px-4 py-3 text-center"
+                                        >
+                                            <h3 class="text-base font-bold">
+                                                Commercial Electrical Services
+                                            </h3>
+                                        </div>
+                                        <div
+                                            class="bg-primary text-background px-4 py-3 text-center"
+                                        >
+                                            <h3 class="text-base font-bold">
+                                                Residential Electrical Services
+                                            </h3>
+                                        </div>
+                                        <div
+                                            class="bg-accent text-background px-4 py-3 text-center"
+                                        >
+                                            <h3 class="text-base font-bold">
+                                                Specialty Services
+                                            </h3>
+                                        </div>
+                                        <div
+                                            class="bg-primary text-background px-4 py-3 text-center"
+                                        >
+                                            <h3 class="text-base font-bold">
+                                                Emergency
+                                            </h3>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Row -->
+                                    <div class="grid grid-cols-4 p-4 gap-4">
+                                        <!-- Commercial Electrical Services -->
+                                        <div class="space-y-1">
+                                            <a
+                                                href="/services/ground-up-construction"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Ground-up Electrical
+                                                Construction
+                                            </a>
+                                            <a
+                                                href="/services/emergency-standby-power"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Emergency & Standby Power
+                                                Generating Systems
+                                            </a>
+                                            <a
+                                                href="/services/commercial-hvac"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Commercial HVAC Electrical
+                                            </a>
+                                            <a
+                                                href="/services/commercial-panels"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Commercial Electrical Panels
+                                            </a>
+                                        </div>
+
+                                        <!-- Residential Electrical Services -->
+                                        <div class="space-y-1">
+                                            <a
+                                                href="/services/car-charging-ev"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Car Charging Stations/ EV
+                                            </a>
+                                            <a
+                                                href="/services/ceiling-fan"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Ceiling Fan
+                                            </a>
+                                            <a
+                                                href="/services/gfci-outlets"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                GFCI Outlets
+                                            </a>
+                                            <a
+                                                href="/services/backup-generators"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Backup Generators
+                                            </a>
+                                        </div>
+
+                                        <!-- Specialty Services -->
+                                        <div class="space-y-1">
+                                            <a
+                                                href="/services/holiday-lighting"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Holiday Lighting Installation
+                                                Services
+                                            </a>
+                                            <a
+                                                href="/services/landscape-lighting"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Landscape Lighting
+                                            </a>
+                                            <a
+                                                href="/services/pool-spa"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Pool & Spa Electrical
+                                            </a>
+                                            <a
+                                                href="/services/property-management"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Property Management
+                                            </a>
+                                        </div>
+
+                                        <!-- Emergency -->
+                                        <div class="space-y-1">
+                                            <a
+                                                href="/services/24-hour-emergency"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                24-hour Emergency Service
+                                            </a>
+                                            <a
+                                                href="/services/hvac"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                HVAC
+                                            </a>
+                                            <a
+                                                href="/services/heating"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Heating
+                                            </a>
+                                            <a
+                                                href="/services/water-heater"
+                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                            >
+                                                Water Heater
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <button
+                                class="text-base font-body text-text hover:text-accent transition-colors whitespace-nowrap flex items-center gap-2"
+                            >
+                                Service Area
+                                <svg
+                                    class="w-4 h-4 transition-transform group-hover:rotate-180"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                            >
+                                <div
+                                    class="bg-background border border-accent/20 shadow-lg py-2 min-w-[200px]"
+                                >
+                                    <a
+                                        href="/service-area/city-1"
+                                        class="block px-6 py-3 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors whitespace-nowrap"
+                                    >
+                                        City 1
+                                    </a>
+                                    <a
+                                        href="/service-area/city-2"
+                                        class="block px-6 py-3 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors whitespace-nowrap"
+                                    >
+                                        City 2
+                                    </a>
+                                    <a
+                                        href="/service-area/city-3"
+                                        class="block px-6 py-3 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors whitespace-nowrap"
+                                    >
+                                        City 3
+                                    </a>
+                                    <a
+                                        href="/service-area/city-4"
+                                        class="block px-6 py-3 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors whitespace-nowrap"
+                                    >
+                                        City 4
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- CTA Button -->
+                    <Button
+                        href="/contact"
+                        variant="primary"
+                        size="lg"
+                        class="!px-20"
+                    >
+                        GET A QUOTE
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
