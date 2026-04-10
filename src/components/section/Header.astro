@@ -4,8 +4,95 @@ import Button from "../ui/Button.astro";
 ---
 
 <header class="fixed top-0 left-0 right-0 w-full bg-background shadow-md z-50">
+    <!-- Mobile Promotional Top Bar (scrolling text) -->
+    <div
+        class="lg:hidden w-full h-10 bg-primary text-background overflow-hidden relative"
+    >
+        <div class="animate-scroll whitespace-nowrap flex items-center h-full">
+            <div class="flex items-center gap-3 text-xs px-4">
+                <svg
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-bold">SPRING SPECIAL:</span>
+                <span class="text-background/80"
+                    >20% OFF any electrical panel upgrade — Use code:</span
+                >
+                <span
+                    class="bg-accent text-background px-2 py-0.5 text-xs font-bold"
+                    >SPRING20</span
+                >
+                <span class="mx-8">•</span>
+                <svg
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-bold">SPRING SPECIAL:</span>
+                <span class="text-background/80"
+                    >20% OFF any electrical panel upgrade — Use code:</span
+                >
+                <span
+                    class="bg-accent text-background px-2 py-0.5 text-xs font-bold"
+                    >SPRING20</span
+                >
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Header (visible on mobile only) -->
+    <div
+        class="lg:hidden flex items-center justify-between px-4 py-3 border-b border-text/10 bg-background"
+    >
+        <div class="flex items-center gap-3">
+            <img
+                src="/logo.png"
+                alt="ElectriTrade Logo"
+                class="w-12 h-12 object-contain"
+            />
+            <div>
+                <h1
+                    class="text-xl font-heading font-bold text-accent leading-tight"
+                >
+                    ElecTrade
+                </h1>
+                <p class="text-xs font-body text-text/70">
+                    Professional Electrical
+                </p>
+            </div>
+        </div>
+        <button
+            id="hamburger-menu-btn"
+            class="text-text hover:text-accent transition-colors p-2"
+        >
+            <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
     <!-- Promotional Top Bar -->
-    <div class="w-full h-12 bg-primary text-background">
+    <div class="w-full h-12 bg-primary text-background hidden lg:block">
         <div
             class="max-w-[1920px] mx-auto h-full flex items-center justify-between px-12"
         >
@@ -96,7 +183,7 @@ import Button from "../ui/Button.astro";
     </div>
 
     <!-- Main Header Container -->
-    <div class="w-full border-b border-text/10">
+    <div class="w-full border-b border-text/10 hidden lg:block">
         <div class="max-w-[1920px] mx-auto flex items-stretch">
             <!-- Logo Section -->
             <div
@@ -127,13 +214,13 @@ import Button from "../ui/Button.astro";
                 <div
                     class="flex items-center justify-between px-16 py-5 border-b border-text/10 bg-background"
                 >
-                    <div class="flex items-center gap-16">
+                    <div class="flex items-center gap-6">
                         <a
                             href="/specials"
-                            class="flex items-center gap-4 text-text hover:text-accent transition-colors group"
+                            class="flex items-center gap-3 px-6 py-3 bg-accent text-background hover:bg-accent/90 transition-all duration-200 group border-l-4 border-accent"
                         >
                             <svg
-                                class="w-7 h-7 text-accent group-hover:text-accent/80 transition-colors"
+                                class="w-6 h-6"
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                             >
@@ -149,10 +236,10 @@ import Button from "../ui/Button.astro";
                         </a>
                         <a
                             href="/financing"
-                            class="flex items-center gap-4 text-text hover:text-accent transition-colors group"
+                            class="flex items-center gap-3 px-6 py-3 bg-primary text-background hover:bg-primary/90 transition-all duration-200 group border-l-4 border-primary"
                         >
                             <svg
-                                class="w-7 h-7 text-accent group-hover:text-accent/80 transition-colors"
+                                class="w-6 h-6"
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                             >
@@ -296,28 +383,28 @@ import Button from "../ui/Button.astro";
                                         <div
                                             class="bg-accent text-background px-4 py-3 text-center"
                                         >
-                                            <h3 class="text-base font-bold">
+                                            <h3 class="text-lg font-bold">
                                                 Commercial Electrical Services
                                             </h3>
                                         </div>
                                         <div
                                             class="bg-primary text-background px-4 py-3 text-center"
                                         >
-                                            <h3 class="text-base font-bold">
+                                            <h3 class="text-lg font-bold">
                                                 Residential Electrical Services
                                             </h3>
                                         </div>
                                         <div
                                             class="bg-accent text-background px-4 py-3 text-center"
                                         >
-                                            <h3 class="text-base font-bold">
+                                            <h3 class="text-lg font-bold">
                                                 Specialty Services
                                             </h3>
                                         </div>
                                         <div
                                             class="bg-primary text-background px-4 py-3 text-center"
                                         >
-                                            <h3 class="text-base font-bold">
+                                            <h3 class="text-lg font-bold">
                                                 Emergency
                                             </h3>
                                         </div>
@@ -329,27 +416,27 @@ import Button from "../ui/Button.astro";
                                         <div class="space-y-1">
                                             <a
                                                 href="/services/ground-up-construction"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Ground-up Electrical
                                                 Construction
                                             </a>
                                             <a
                                                 href="/services/emergency-standby-power"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Emergency & Standby Power
                                                 Generating Systems
                                             </a>
                                             <a
                                                 href="/services/commercial-hvac"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Commercial HVAC Electrical
                                             </a>
                                             <a
                                                 href="/services/commercial-panels"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Commercial Electrical Panels
                                             </a>
@@ -359,25 +446,25 @@ import Button from "../ui/Button.astro";
                                         <div class="space-y-1">
                                             <a
                                                 href="/services/car-charging-ev"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Car Charging Stations/ EV
                                             </a>
                                             <a
                                                 href="/services/ceiling-fan"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Ceiling Fan
                                             </a>
                                             <a
                                                 href="/services/gfci-outlets"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 GFCI Outlets
                                             </a>
                                             <a
                                                 href="/services/backup-generators"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Backup Generators
                                             </a>
@@ -387,26 +474,26 @@ import Button from "../ui/Button.astro";
                                         <div class="space-y-1">
                                             <a
                                                 href="/services/holiday-lighting"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Holiday Lighting Installation
                                                 Services
                                             </a>
                                             <a
                                                 href="/services/landscape-lighting"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Landscape Lighting
                                             </a>
                                             <a
                                                 href="/services/pool-spa"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Pool & Spa Electrical
                                             </a>
                                             <a
                                                 href="/services/property-management"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Property Management
                                             </a>
@@ -416,25 +503,25 @@ import Button from "../ui/Button.astro";
                                         <div class="space-y-1">
                                             <a
                                                 href="/services/24-hour-emergency"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 24-hour Emergency Service
                                             </a>
                                             <a
                                                 href="/services/hvac"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 HVAC
                                             </a>
                                             <a
                                                 href="/services/heating"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Heating
                                             </a>
                                             <a
                                                 href="/services/water-heater"
-                                                class="block px-3 py-2 text-base font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
+                                                class="block px-3 py-2 text-lg font-body text-text hover:text-accent hover:bg-accent/5 transition-colors"
                                             >
                                                 Water Heater
                                             </a>
@@ -510,3 +597,445 @@ import Button from "../ui/Button.astro";
         </div>
     </div>
 </header>
+
+<!-- Mobile Sidebar Overlay -->
+<div id="mobile-sidebar-overlay" class="fixed inset-0 bg-text/50 z-[60] hidden">
+</div>
+
+<!-- Mobile Sidebar -->
+<div
+    id="mobile-sidebar"
+    class="fixed top-0 right-0 h-full w-80 bg-background shadow-lg z-[70] transform translate-x-full transition-transform duration-300"
+>
+    <div class="flex flex-col h-full">
+        <!-- Sidebar Header -->
+        <div
+            class="flex items-center justify-between px-6 py-4 border-b border-text/10"
+        >
+            <h2 class="text-xl font-heading font-bold text-accent">Menu</h2>
+            <button
+                id="close-sidebar"
+                class="text-text hover:text-accent transition-colors"
+            >
+                <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Sidebar Content -->
+        <div class="flex-1 overflow-y-auto px-6 py-4">
+            <!-- Home -->
+            <a
+                href="/"
+                class="flex items-center gap-3 py-4 text-lg font-body text-text hover:text-accent transition-colors border-b border-text/10"
+            >
+                <svg
+                    class="w-6 h-6 text-accent"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                    ></path>
+                </svg>
+                <span>Home</span>
+            </a>
+
+            <!-- About Us -->
+            <div class="border-b border-text/10">
+                <button
+                    class="mobile-dropdown-toggle w-full flex items-center justify-between py-4 text-lg font-body text-text hover:text-accent transition-colors"
+                >
+                    <div class="flex items-center gap-3">
+                        <svg
+                            class="w-6 h-6 text-accent"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span>About Us</span>
+                    </div>
+                    <svg
+                        class="w-5 h-5 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-9 pb-3">
+                    <a
+                        href="/about"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >About Us</a
+                    >
+                    <a
+                        href="/careers"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >Careers</a
+                    >
+                    <a
+                        href="/reviews"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >Reviews/Testimonials</a
+                    >
+                    <a
+                        href="/team"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >Meet The Team</a
+                    >
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="border-b border-text/10">
+                <button
+                    class="mobile-dropdown-toggle w-full flex items-center justify-between py-4 text-lg font-body text-text hover:text-accent transition-colors"
+                >
+                    <div class="flex items-center gap-3">
+                        <svg
+                            class="w-6 h-6 text-accent"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Services</span>
+                    </div>
+                    <svg
+                        class="w-5 h-5 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-9 pb-3">
+                    <!-- Commercial -->
+                    <div class="mb-4">
+                        <h4 class="text-sm font-bold text-accent mb-2">
+                            Commercial Electrical Services
+                        </h4>
+                        <a
+                            href="/services/ground-up-construction"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Ground-up Electrical Construction</a
+                        >
+                        <a
+                            href="/services/emergency-standby-power"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Emergency & Standby Power Generating Systems</a
+                        >
+                        <a
+                            href="/services/commercial-hvac"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Commercial HVAC Electrical</a
+                        >
+                        <a
+                            href="/services/commercial-panels"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Commercial Electrical Panels</a
+                        >
+                    </div>
+                    <!-- Residential -->
+                    <div class="mb-4">
+                        <h4 class="text-sm font-bold text-accent mb-2">
+                            Residential Electrical Services
+                        </h4>
+                        <a
+                            href="/services/car-charging-ev"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Car Charging Stations/ EV</a
+                        >
+                        <a
+                            href="/services/ceiling-fan"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Ceiling Fan</a
+                        >
+                        <a
+                            href="/services/gfci-outlets"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >GFCI Outlets</a
+                        >
+                        <a
+                            href="/services/backup-generators"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Backup Generators</a
+                        >
+                    </div>
+                    <!-- Specialty -->
+                    <div class="mb-4">
+                        <h4 class="text-sm font-bold text-accent mb-2">
+                            Specialty Services
+                        </h4>
+                        <a
+                            href="/services/holiday-lighting"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Holiday Lighting Installation Services</a
+                        >
+                        <a
+                            href="/services/landscape-lighting"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Landscape Lighting</a
+                        >
+                        <a
+                            href="/services/pool-spa"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Pool & Spa Electrical</a
+                        >
+                        <a
+                            href="/services/property-management"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Property Management</a
+                        >
+                    </div>
+                    <!-- Emergency -->
+                    <div>
+                        <h4 class="text-sm font-bold text-accent mb-2">
+                            Emergency
+                        </h4>
+                        <a
+                            href="/services/24-hour-emergency"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >24-hour Emergency Service</a
+                        >
+                        <a
+                            href="/services/hvac"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >HVAC</a
+                        >
+                        <a
+                            href="/services/heating"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Heating</a
+                        >
+                        <a
+                            href="/services/water-heater"
+                            class="block py-1.5 text-sm font-body text-text hover:text-accent transition-colors"
+                            >Water Heater</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Area -->
+            <div class="border-b border-text/10">
+                <button
+                    class="mobile-dropdown-toggle w-full flex items-center justify-between py-4 text-lg font-body text-text hover:text-accent transition-colors"
+                >
+                    <div class="flex items-center gap-3">
+                        <svg
+                            class="w-6 h-6 text-accent"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Service Area</span>
+                    </div>
+                    <svg
+                        class="w-5 h-5 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-9 pb-3">
+                    <a
+                        href="/service-area/city-1"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >City 1</a
+                    >
+                    <a
+                        href="/service-area/city-2"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >City 2</a
+                    >
+                    <a
+                        href="/service-area/city-3"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >City 3</a
+                    >
+                    <a
+                        href="/service-area/city-4"
+                        class="block py-2 text-base font-body text-text hover:text-accent transition-colors"
+                        >City 4</a
+                    >
+                </div>
+            </div>
+
+            <!-- Specials / Coupons -->
+            <a
+                href="/specials"
+                class="flex items-center gap-3 px-4 py-4 my-2 bg-accent text-background hover:bg-accent/90 transition-all duration-200 border-l-4 border-accent"
+            >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-bold">Specials / Coupons</span>
+            </a>
+
+            <!-- Financing -->
+            <a
+                href="/financing"
+                class="flex items-center gap-3 px-4 py-4 my-2 bg-primary text-background hover:bg-primary/90 transition-all duration-200 border-l-4 border-primary"
+            >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                    <path
+                        fill-rule="evenodd"
+                        d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-bold">Financing</span>
+            </a>
+
+            <!-- Contact Info -->
+            <div class="mt-6 space-y-3">
+                <a
+                    href="tel:+1234567890"
+                    class="flex items-center gap-3 text-text hover:text-accent transition-colors"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <path
+                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                        ></path>
+                    </svg>
+                    <span class="text-sm font-body">(123) 456-7890</span>
+                </a>
+                <a
+                    href="mailto:info@electritrade.com"
+                    class="flex items-center gap-3 text-text hover:text-accent transition-colors"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <path
+                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                        ></path>
+                        <path
+                            d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                        ></path>
+                    </svg>
+                    <span class="text-sm font-body">info@electritrade.com</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Sidebar Footer CTA -->
+        <div class="px-6 py-4 border-t border-text/10">
+            <a
+                href="/contact"
+                class="block w-full bg-accent hover:bg-accent/90 text-background text-center py-3 font-bold transition-colors"
+            >
+                GET A QUOTE
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById("hamburger-menu-btn");
+    const sidebar = document.getElementById("mobile-sidebar");
+    const overlay = document.getElementById("mobile-sidebar-overlay");
+    const closeSidebar = document.getElementById("close-sidebar");
+
+    function openSidebar() {
+        sidebar?.classList.remove("translate-x-full");
+        overlay?.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeSidebarFn() {
+        sidebar?.classList.add("translate-x-full");
+        overlay?.classList.add("hidden");
+        document.body.style.overflow = "";
+    }
+
+    hamburger?.addEventListener("click", openSidebar);
+    closeSidebar?.addEventListener("click", closeSidebarFn);
+    overlay?.addEventListener("click", closeSidebarFn);
+
+    // Mobile dropdown toggles
+    const dropdownToggles = document.querySelectorAll(
+        ".mobile-dropdown-toggle",
+    );
+    dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+            const content = toggle.nextElementSibling;
+            const icon = toggle.querySelector("svg");
+
+            content?.classList.toggle("hidden");
+            icon?.classList.toggle("rotate-180");
+        });
+    });
+</script>
+
+<style>
+    /* Scrolling animation for mobile topbar */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-scroll {
+        animation: scroll 20s linear infinite;
+    }
+
+    /* Hide desktop nav on mobile */
+    @media (max-width: 1023px) {
+        header > div:nth-child(3) {
+            display: none;
+        }
+    }
+</style>
