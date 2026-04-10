@@ -603,8 +603,8 @@ import Button from "../ui/Button.astro";
     let lastScrollTop = 0;
     const header = document.querySelector("header");
     const promoBar = header?.querySelector(".lg\\:block.bg-primary");
-    const topRow = header?.querySelector(
-        ".border-b.border-text\\/10.bg-background",
+    const specialsRow = header?.querySelector(
+        ".flex.items-center.justify-between.px-16",
     );
 
     window.addEventListener("scroll", () => {
@@ -612,15 +612,15 @@ import Button from "../ui/Button.astro";
             window.pageYOffset || document.documentElement.scrollTop;
 
         if (scrollTop > 100) {
-            // Scrolled down - hide promo bar and top row
+            // Scrolled down - hide promo bar and specials/financing row only
             header?.classList.add("header-compact");
             promoBar?.classList.add("hidden");
-            topRow?.classList.add("hidden");
+            specialsRow?.classList.add("hidden");
         } else {
             // At top - show all
             header?.classList.remove("header-compact");
             promoBar?.classList.remove("hidden");
-            topRow?.classList.remove("hidden");
+            specialsRow?.classList.remove("hidden");
         }
 
         lastScrollTop = scrollTop;
