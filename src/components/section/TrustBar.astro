@@ -1,0 +1,181 @@
+---
+// Trust badges data
+const trustItems = [
+    {
+        name: "Google Reviews",
+        rating: "4.9/5 Stars",
+        svg: `<svg viewBox="0 0 48 48" fill="none"><path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFC107"/><path d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" fill="#FF3D00"/><path d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" fill="#4CAF50"/><path d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" fill="#1976D2"/></svg>`,
+    },
+    {
+        name: "Yelp",
+        rating: "5/5 Stars",
+        svg: `<svg viewBox="0 0 48 48" fill="none"><path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4z" fill="#D32323"/><path d="M24.5 18.8l1.9 5.8h6.1l-4.9 3.6 1.9 5.8-4.9-3.6-4.9 3.6 1.9-5.8-4.9-3.6h6.1l1.9-5.8z" fill="#FFF"/></svg>`,
+    },
+    {
+        name: "Better Business Bureau",
+        rating: "A+ Rated",
+        svg: `<svg viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="4" fill="#003B71"/><text x="24" y="30" font-family="Arial" font-weight="bold" font-size="20" fill="#FFF" text-anchor="middle">BBB</text></svg>`,
+    },
+    {
+        name: "Angi",
+        rating: "Super Service Award",
+        svg: `<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#FF6B35"/><path d="M24 10l3.5 10.5h11l-9 6.5 3.5 10.5-9-6.5-9 6.5 3.5-10.5-9-6.5h11z" fill="#FFF"/></svg>`,
+    },
+    {
+        name: "HomeAdvisor",
+        rating: "Top Rated Pro",
+        svg: `<svg viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="4" fill="#FF6B35"/><path d="M24 8l12 12H12z" fill="#FFF"/><rect x="18" y="20" width="12" height="16" fill="#FFF"/></svg>`,
+    },
+];
+
+const duplicated = [...trustItems, ...trustItems];
+---
+
+<section class="bg-background py-12 border-y border-text/10 overflow-hidden">
+    <div class="max-w-[1920px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-20">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <p class="font-body text-xl text-text/60 uppercase tracking-wider">
+                Trusted by thousands of homeowners & businesses
+            </p>
+        </div>
+
+        <!-- Scrolling Logos -->
+        <div class="relative mb-12">
+            <!-- Gradient Overlays -->
+            <div
+                class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"
+            >
+            </div>
+            <div
+                class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"
+            >
+            </div>
+
+            <!-- Logo Track -->
+            <div class="logo-track">
+                <div class="logo-track-inner">
+                    {
+                        duplicated.map((item) => (
+                            <div class="logo-item" title={item.name}>
+                                <div class="logo-card">
+                                    <div class="logo-svg" set:html={item.svg} />
+                                    <div class="logo-meta">
+                                        <div class="font-body text-sm font-bold text-text leading-tight">
+                                            {item.name}
+                                        </div>
+                                        <div class="font-body text-xs text-text/60">
+                                            {item.rating}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <h2 class="font-heading font-bold text-5xl text-primary mb-2">
+                    15+
+                </h2>
+                <p class="font-body text-xl text-text/60">Years Experience</p>
+            </div>
+            <div class="text-center">
+                <h2 class="font-heading font-bold text-5xl text-primary mb-2">
+                    5,000+
+                </h2>
+                <p class="font-body text-xl text-text/60">Projects Completed</p>
+            </div>
+            <div class="text-center">
+                <h2 class="font-heading font-bold text-5xl text-primary mb-2">
+                    100%
+                </h2>
+                <p class="font-body text-xl text-text/60">Satisfaction Rate</p>
+            </div>
+            <div class="text-center">
+                <h2 class="font-heading font-bold text-5xl text-primary mb-2">
+                    24/7
+                </h2>
+                <p class="font-body text-xl text-text/60">Emergency Service</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .logo-track {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .logo-track-inner {
+        display: flex;
+        gap: 1.25rem;
+        animation: scroll-left 35s linear infinite;
+        width: fit-content;
+    }
+
+    .logo-track:hover .logo-track-inner {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .logo-item {
+        flex-shrink: 0;
+        width: 210px;
+    }
+
+    .logo-card {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        background: white;
+        border: 1px solid rgba(15, 3, 2, 0.1);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        transition:
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .logo-card:hover {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .logo-svg {
+        flex-shrink: 0;
+        width: 56px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-svg :global(svg) {
+        width: 100%;
+        height: 100%;
+    }
+
+    .logo-meta {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .logo-meta > div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
