@@ -187,21 +187,23 @@ import Button from "../ui/Button.astro";
         <div class="max-w-[1920px] mx-auto flex items-stretch">
             <!-- Logo Section -->
             <div
-                class="w-96 border-r border-text/10 flex items-center px-10 py-7 bg-background"
+                class="logo-section w-96 border-r border-text/10 flex items-center px-10 py-7 bg-background transition-all duration-300"
             >
                 <div class="flex items-center gap-5 w-full">
                     <img
                         src="/logo.png"
                         alt="ElectriTrade Logo"
-                        class="w-20 h-20 object-contain shrink-0"
+                        class="logo-img w-20 h-20 object-contain shrink-0 transition-all duration-300"
                     />
                     <div class="flex flex-col gap-1">
                         <h1
-                            class="text-3xl font-heading font-bold text-accent leading-tight"
+                            class="logo-text text-3xl font-heading font-bold text-accent leading-tight transition-all duration-300"
                         >
                             ElecTrade
                         </h1>
-                        <p class="text-base font-body text-text/70">
+                        <p
+                            class="logo-subtext text-base font-body text-text/70 transition-all duration-300"
+                        >
                             Professional Electrical
                         </p>
                     </div>
@@ -301,8 +303,12 @@ import Button from "../ui/Button.astro";
                 </div>
 
                 <!-- Bottom Row: Main Navigation -->
-                <div class="flex items-stretch justify-between bg-background">
-                    <nav class="flex items-center gap-14 px-16 py-6">
+                <div
+                    class="nav-row flex items-stretch justify-between bg-background transition-all duration-300"
+                >
+                    <nav
+                        class="flex items-center gap-14 px-16 py-6 transition-all duration-300"
+                    >
                         <a
                             href="/"
                             class="text-base font-body text-text hover:text-accent transition-colors whitespace-nowrap"
@@ -612,12 +618,12 @@ import Button from "../ui/Button.astro";
             window.pageYOffset || document.documentElement.scrollTop;
 
         if (scrollTop > 100) {
-            // Scrolled down - hide promo bar and specials/financing row only
+            // Scrolled down - compact mode
             header?.classList.add("header-compact");
             promoBar?.classList.add("hidden");
             specialsRow?.classList.add("hidden");
         } else {
-            // At top - show all
+            // At top - full mode
             header?.classList.remove("header-compact");
             promoBar?.classList.remove("hidden");
             specialsRow?.classList.remove("hidden");
@@ -633,7 +639,32 @@ import Button from "../ui/Button.astro";
     }
 
     .header-compact {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Compact logo section */
+    .header-compact .logo-section {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .header-compact .logo-img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .header-compact .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .header-compact .logo-subtext {
+        font-size: 0.75rem;
+    }
+
+    /* Compact navigation */
+    .header-compact .nav-row nav {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 </style>
 
